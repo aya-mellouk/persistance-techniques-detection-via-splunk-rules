@@ -1,0 +1,12 @@
+index=sysmon (EventCode=12 OR EventCode=13)
+TargetObject IN (
+    "*\\CurrentVersion\\Run\\*",
+    "*\\CurrentVersion\\RunOnce\\*",
+    "*\\CurrentVersion\\RunOnceEx\\*",
+    "*\\CurrentVersion\\RunServices\\*",
+    "*\\CurrentVersion\\RunServicesOnce\\*",
+    "*\\CurrentVersion\\Policies\\Explorer\\Run\\*",
+    "*\\CurrentVersion\\Explorer\\StartupApproved\\Run\\*",
+    "*\\CurrentVersion\\Explorer\\StartupApproved\\Run32\\*"
+)
+| table _time, EventType, TargetObject, Details, User
