@@ -91,19 +91,19 @@ Atomic red team provides us with scripts that represent common attack and techni
 
 ## Useful commands
 
-- List available techniques 
+- List available techniques :
 Invoke-AtomicTest T1059 -ShowDetailsBrief 
-- Run a specific technique 
+- Run a specific technique :
 Invoke-AtomicTest T1059 
-- Run a specific test number 
+- Run a specific test number :
 Invoke-AtomicTest T1059.001 -TestNumbers 1 
-- Check prerequisites 
+- Check prerequisites :
 Invoke-AtomicTest T1059 -CheckPrereqs 
-- Install prerequisites 
+- Install prerequisites :
 Invoke-AtomicTest T1059 -GetPrereqs 
-- Clean up after a test 
+- Clean up after a test :
 Invoke-AtomicTest T1059 -Cleanup
-- Disable the powershell execution policy blocking 
+- Disable the powershell execution policy blocking :
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force
 
