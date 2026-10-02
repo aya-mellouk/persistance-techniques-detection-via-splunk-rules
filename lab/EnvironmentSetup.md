@@ -12,7 +12,7 @@ Sysmon was installed on the Windows VM using the SwiftOnSecurity community confi
 
 ```powershell
 .\Sysmon64.exe -accepteula -i sysmonconfig.xml
-
+```
 # Splunk configuration
 
 ## Purpose
