@@ -1,5 +1,5 @@
 
-# T1547.001 — Registry Run Keys / Startup Folder
+# T1547.001 : Registry Run Keys / Startup Folder
 
 ## MITRE ATT&CK
 
@@ -9,59 +9,25 @@
 
 ## Attack Scenario
 
-An attacker establishes persistence by configuring a Registry Run Key so that a malicious executable is launched when a user logs on.
+An attacker establishes persistence by configuring a Registry Run Key or adding a program to a startup folder so that a malicious executable is launched when a user logs on.
 
-## Attack Simulation
-
-The technique was simulated using Atomic Red Team.
-
-### Test
-
-```powershell
-Invoke-AtomicTest T1547.001 -TestNumbers 1
-```
-
-## Telemetry
-
-Relevant telemetry:
-
-* Sysmon Event ID 13 — Registry value modification
-* Windows registry
-* Splunk
 
 ## Attack Artifact
 
 The expected artifact is a modification of a Registry Run key.
+<img width="807" height="167" alt="image" src="https://github.com/user-attachments/assets/72dd9c9e-b669-4830-a974-db4f8d9fef91" />
 
-Example pattern:
 
-```text
-HKU\<user>\Software\Microsoft\Windows\CurrentVersion\Run
-```
 
 ## Detection Logic
 
 The detection looks for registry value modifications targeting Run keys.
 
-```spl
-index=sysmon EventCode=13 EventType=SetValue
-TargetObject="*\\CurrentVersion\\Run*"
-| table _time EventType TargetObject Details User
-| sort -_time
-```
-
 ## Investigation
 
 When the rule triggers, investigate:
-
-* Registry path
-* Registry value
-* Executable path
-* User account
-* Process responsible for the modification
-* Parent process
-* File reputation
-* Execution timeline
+* unusual binary paths or script-based payloads. 
+* Multi-event detection includes registry modification followed by process execution from non-standard directories or abnormal parent-child process relationships.
 
 ## False Positives
 
@@ -73,18 +39,6 @@ Potential legitimate activity includes:
 
 Additional filtering should therefore be based on the environment and observed baseline.
 
-## Validation
 
-The detection was tested against the Atomic Red Team simulation.
 
-Screenshots:
 
-`./screenshots/`
-
-## MITRE Mapping
-
-T1547.001 — Registry Run Keys / Startup Folder
-
-## Lessons Learned
-
-Document what telemetry was available, what fields were useful, and how the initial query was improved.
