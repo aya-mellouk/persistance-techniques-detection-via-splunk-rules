@@ -1,0 +1,12 @@
+(index=wineventlog EventCode=4720)
+OR
+(index=sysmon EventCode=1
+  (
+    ((Image="*\\net.exe" OR Image="*\\net1.exe") CommandLine="*user*" CommandLine="*/add*")
+    OR ((Image="*\\powershell.exe" OR Image="*\\pwsh.exe") CommandLine="*New-LocalUser*")
+  )
+)
+| eval host=lower(coalesce(Computer, host))
+| transaction host startswith=(EventCode=1) endswith=(EventCode=4720) maxspan=60s
+| where eventcount>=2 AND duration<60
+| table _time host duration eventcount CommandLine ParentImage TargetUserName SubjectUserName
