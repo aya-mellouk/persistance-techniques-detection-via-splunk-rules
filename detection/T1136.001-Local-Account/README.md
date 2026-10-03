@@ -1,9 +1,12 @@
 # T1136.001: Create Account: Local Account
 
 ## MITRE ATT&Ck
- **Technique**  T1136.001 /
- **Name** : Create Account: Local Account /
- **Tactic** : Persistence 
+| Field | Value |
+|---|---|
+| **Technique** | T1136.001 |
+| **Name** | Create Account: Local Account |
+| **Tactic** | Persistence |
+
 
 ## Attack Scenario
 An attacker establishes persistence by creating a new local account on a compromised host, using built-in tools such as `net user /add` or the PowerShell cmdlet `New-LocalUser`. The account is often added to the local Administrators group so the attacker keeps privileged access even if the initial foothold is removed.
