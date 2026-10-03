@@ -34,14 +34,6 @@ For each technique:
 7. Tune false positives
 
 
-## Detection Coverage
-
-| Technique         | MITRE ATT&CK | Telemetry          | Splunk Detection | Tested |
-| ----------------- | ------------ | ------------------ | ---------------- | ------ |
-| Registry Run Keys | T1547.001    | Sysmon Event ID 13 | ✅                | ✅      |
-| Windows Services  | T1543.003    | Sysmon Event ID 13 | ✅                | ✅      |
-| Scheduled Task    | T1053.005    | Windows/Sysmon     | ✅                | ✅      |
-
 ## Detection Philosophy
 
 The goal of this project is not to build detections based only on Event IDs.
@@ -57,18 +49,6 @@ For example:
 * persistence-related registry changes
 * suspicious parent/child process relationships
 
-## Repository Structure
-
-```text
-detections/
-    technique/
-        README.md
-        detection.spl
-        screenshots/
-
-lab/
-README.md
-```
 
 ## Current Progress
 
