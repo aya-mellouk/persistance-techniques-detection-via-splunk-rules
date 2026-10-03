@@ -9,7 +9,7 @@
 
 
 ## Attack Scenario
-An attacker establishes persistence by creating a new local account on a compromised host, using built-in tools such as `net user /add` or the PowerShell cmdlet `New-LocalUser`. The account is often added to the local Administrators group so the attacker keeps privileged access even if the initial foothold is removed.
+An attacker establishes persistence by creating a new local account on a compromised host, using built-in tools such as `net user /add` or the PowerShell cmdline `New-LocalUser`. The account is often added to the local Administrators group so the attacker keeps privileged access even if the initial foothold is removed.
 
 ## Attack Artifact
 <img width="665" height="167" alt="image" src="https://github.com/user-attachments/assets/e083d680-9b83-4bba-aa50-8b97df814bdd" />
