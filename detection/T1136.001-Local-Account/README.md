@@ -1,8 +1,8 @@
 # T1136.001: Create Account: Local Account
 
 ## MITRE ATT&Ck
- **Technique**  T1136.001 
- **Name** : Create Account: Local Account 
+ **Technique**  T1136.001 /
+ **Name** : Create Account: Local Account /
  **Tactic** : Persistence 
 
 ## Attack Scenario
