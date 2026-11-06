@@ -36,7 +36,7 @@ Test  : Service Installation CMD
 | Journal Security | **4697** (si Audit Security System Extension activé) |
 | Processus fils | `services.exe` → payload au démarrage du service |
 
-```
+
 
 ## 4. Investigation
 
