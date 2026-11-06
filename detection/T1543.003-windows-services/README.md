@@ -3,12 +3,7 @@
 
 | Champ | Valeur |
 |---|---|
-| Tactiques | Persistence, Privilege Escalation |
 | Technique | T1543.003 |
-| Source de la règle | Splunk ESCU – *Sc exe Manipulating Windows Services* |
-| Data model | Endpoint.Processes |
-| Sources de logs (lab) | Sysmon EID 1, Security 4688, System 7045 / Security 4697 |
-
 ---
 
 ## 1. Description
