@@ -3,7 +3,7 @@
 
 | Field | Value |
 |---|---|
-| MITRE ATT&CK | [T1197 - BITS Jobs](https://attack.mitre.org/techniques/T1197/) |
+| MITRE ATT&CK | T1197  |
 | Tactics | Persistence (TA0003), Defense Evasion (TA0005) |
 
 ---
