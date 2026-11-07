@@ -1,5 +1,5 @@
-# T1543.003 – Create or Modify System Process: Windows Service
-**Detection : sc.exe manipulating Windows services (create / config)**
+# T1543.003 : Create or Modify System Process: Windows Service
+
 
 | Champ | Valeur |
 |---|---|
