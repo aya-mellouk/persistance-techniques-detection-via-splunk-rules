@@ -1,0 +1,5 @@
+index=sysmon EventCode=1
+  (Image="*\\bitsadmin.exe" OR OriginalFileName="bitsadmin.exe")
+  CommandLine="*setnotifycmdline*"
+| rex field=CommandLine "(?i)setnotifycmdline\s+(?<bits_job_name>\S+)\s+(?<notify_program>\"[^\"]+\"|\S+)\s*(?<notify_args>.*)"
+| table _time host user ParentImage ParentCommandLine CommandLine bits_job_name notify_program notify_args
