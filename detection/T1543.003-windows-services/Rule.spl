@@ -1,0 +1,7 @@
+index=sysmon  EventCode=1
+  (Image="*\\sc.exe" OR OriginalFileName="sc.exe")
+  (CommandLine="* create *" OR (CommandLine="* config *" AND CommandLine="*binpath*"))
+| eval service_action=case(like(lower(CommandLine),"% create %"),"create", like(lower(CommandLine),"% config %"),"config_binpath")
+| eval remote_target=if(match(CommandLine,"(?i)sc(\.exe)?\"?\s+\\\\\\\\"),"yes","no")
+| eval suspicious_path=if(match(lower(CommandLine),"(\\\\temp\\\\|\\\\appdata\\\\|\\\\users\\\\public\\\\|\\\\programdata\\\\|cmd(\.exe)?\s+/c|powershell|%comspec%)"),"yes","no")
+
